@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial}
+* {box-sizing: border-box;}
+
+input[type=text], select{
+  width: 25%;
+  padding: center;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  resize: vertical;
+  text-align: center;
+}
+input[type=text],textarea {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #ffd000;
+  color: rgb(0, 0, 0);
+  padding:center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100;
+  height: 50;
+  font-size: 20px;
+}
+
+input[type=submit]:hover {
+  background-color: #131313;
+  color: rgb(255, 254, 254);
+}
+
+.container {
+  width: 70%;
+  height: 150%;
+  border-radius: 3px;
+  background-color: #f2f2f2;
+  padding: top;
+  margin-top: 20px;
+  margin-left: 15%;
+  margin-bottom: 20px;
+  text-align: center;  
+}
+
+
+.row{
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <h3>ระบบลงทะเบียนนักศึกษา</h3>
+
+  <div class = "row">
+  <form action="/show">
+        <label for="fname">ชื่อ :</label> 
+        <input type="text" id="fname" name="firstname" placeholder="เช่น คีตะภัทร">
+          <label for="lname">นามสกุล :</label> 
+          <input type="text" id="lname" name="lastname" placeholder="เช่น ภิบาล">
+          <label for="id_stu">รหัสนักศึกษา :</label> 
+          <input type="text" id="id_stu" name="id_stu" placeholder="116XXXXXXXXXX-1">
+          <label for="maill">E-mail :</label> 
+          <input type="text" id="mail" name="mail" placeholder="116XXXXXXXXXX1@rmutt.ac.th">
+        <div>
+          <label for="gender">เพศ :</label> 
+          <input type="radio" id="gender" name="gender" value="ชาย">
+          <label for="html">ชาย</label>
+          <input type="radio" id="gender" name="gender" value="หญิง">
+          <label for="html">หญิง</label>
+        </div>
+          <div>
+          <label for="faculty">คณะ :</label> 
+          <input type="faculty" id="faculty" name="faculty" placeholder="เช่น วิศวกรรมศาสตร์">
+          <label for="branch">สาขา :</label> 
+          <input type="branch" id="branch" name="branch" placeholder="เช่น วิศวกรรมคอมพิวเตอร์">
+
+          <label for="born">วัน เดือน ปี เกิด:</label>
+        <input type="date" id="born" name="born"
+               value="xx-xx-xx"
+               min="1900-01-01" max="2023-12-31">
+
+               <label for="country">Country :</label>
+               <select id="country" name="country">
+                   <option value="">-- กรุณาเลือก --</option>
+                   <% lists.forEach(function(user){ %>
+                   <option value="<%= user.country %>">
+                   <%=user.country %></option>
+                   <% }) %>
+               </select>
+      </div>
+        <div>
+          <label for="address">ที่อยู่อาศัย :</label>
+        <textarea id="address" name="address" placeholder="เลขที่บ้าน ตำบล อำเภอ จังหวัด รหัสไปรษณีย์" style="height:100px"></textarea>
+        </div>
+        <div class="container">
+          <input type="submit" value="ยืนยันการลงทะเบียน">
+        </div>
+      </div>
+
+  </form>
+  </div>
+</div>
+
+</body>
+</html>
