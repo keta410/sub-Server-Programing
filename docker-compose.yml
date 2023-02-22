@@ -1,0 +1,10 @@
+version: '3.5'
+services:
+  # name ของ service
+  mywebsite:
+    container_name: sub-server #ชื่อ container
+    build: my-template-engine #สร้าง ระบุเส้นทางที่มีใน Dockerfile 
+    volumes: 
+      - ./my-template-engine:/usr/src/app
+    ports: # เลขที่ออกผ่านบน website : set เลขไว้(ที่กำหนดใน file)
+      - "9002:3000"
