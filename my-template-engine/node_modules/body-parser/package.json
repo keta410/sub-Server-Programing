@@ -15,7 +15,7 @@
     "depd": "2.0.0",
     "destroy": "1.2.0",
     "http-errors": "2.0.0",
-    "iconv-lite": "0.4.24",
+    "iconv-lite": "0.6.3",
     "on-finished": "2.4.1",
     "qs": "6.11.0",
     "raw-body": "2.5.1",
